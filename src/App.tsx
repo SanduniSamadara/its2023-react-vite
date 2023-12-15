@@ -1,45 +1,45 @@
 import React from 'react';
+import Card from "./components/card/card";
+import Header from "./components/layout/header";
+import Footer from "./components/layout/footer";
 
 class App extends React.Component<any, any> {
-    state = {
-        count: 0,
-        visible: true
-    }
-
-    /*up = (): void => {
-        this.setState({count: this.state.count + 1}) // update the state
-    }
-
-    down = (): void => {
-        this.setState({count: this.state.count - 1})
-    }*/
-
-    update = (type: string) => {
-        switch (type) {
-            case "UP":
-                this.setState({count: this.state.count + 1});// update the state
-                break;
-            case "DOWN":
-                this.setState({count: this.state.count - 1});
-                break;
-        }
-    }
 
     render() {
-
-        // const x = "hello";
-
         return (
-            <div className="m-5">
+            <div>
 
-                {/*{ x }*/}
 
-                <button className=" inline bg-green-600 px-5" onClick={() => this.update("UP")}>+</button>
-                <div className="inline mx-5 font-bold">{this.state.count}</div>
-                <button className="inline bg-purple-600 px-5" onClick={() => this.update("DOWN")}>-</button>
+                <Header/>
+
+                <section>
+                    <div
+                        className={'grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-fit relative m-auto'}>
+                        <Card/>
+                        <Card/>
+                        <Card/>
+                        <Card/>
+
+                        <Card/>
+                        <Card/>
+                        <Card/>
+                        <Card/>
+
+                        <Card/>
+                        <Card/>
+                        <Card/>
+                        <Card/>
+
+
+                    </div>
+                </section>
+
+                <Footer/>
             </div>
         );
+
     }
+
 
 }
 
